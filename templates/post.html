@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.title }}</title>
+</head>
+<body>
+    <h1>{{ post.title }}</h1>
+
+    <img src="{{ url_for('static', filename='images/sample.png') }}" width="300">
+
+    <h1>{{ post.title }}</h1>
+
+    <div>{{ html_content|safe }}</div>
+    
+    <p><a href="/">← 記事一覧に戻る</a></p>
+    
+</body>
+</html>

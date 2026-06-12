@@ -1,0 +1,13 @@
+<h1>記事を編集</h1>
+
+<form method="POST">
+    <p>タイトル：</p>
+    <input type="text" name="title" value="{{ post.title }}" required>
+
+    <p>本文（Markdown）：</p>
+    <textarea name="content" rows="10" required>{{ post.content }}</textarea>
+
+    <p><button type="submit">更新</button></p>
+</form>
+
+<p><a href="/post/{{ post.id }}">← 記事に戻る</a></p>
