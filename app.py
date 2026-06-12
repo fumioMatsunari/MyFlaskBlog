@@ -17,7 +17,7 @@ def index():
     conn.close()
     return render_template("index.html", posts=posts)
 
-# 記事ページ
+# 記事追加ページ
 @app.route("/admin/new", methods=["GET", "POST"])
 def new_post():
     if request.method == "POST":
@@ -33,6 +33,7 @@ def new_post():
 
     return render_template("new_post.html")
 
+# 記事編集ページ
 @app.route("/admin/edit/<int:post_id>", methods=["GET", "POST"])
 def edit_post(post_id):
     conn = get_db_connection()
@@ -42,8 +43,10 @@ def edit_post(post_id):
         title = request.form["title"]
         content = request.form["content"]
 
-        conn.execute("UPDATE posts SET title = ?, content = ? WHERE id = ?",
-                     (title, content, post_id))
+        conn.execute(
+            "UPDATE posts SET title = ?, content = ? WHERE id = ?",
+            (title, content, post_id)
+        )
         conn.commit()
         conn.close()
 
@@ -51,6 +54,17 @@ def edit_post(post_id):
 
     conn.close()
     return render_template("edit_post.html", post=post)
+
+# 記事ページ
+@app.route("/post/<int:post_id>")
+def post(post_id):
+    conn = get_db_connection()
+    post = conn.execute("SELECT * FROM posts WHERE id = ?", (post_id,)).fetchone()
+    conn.close()
+
+    html_content = markdown.markdown(post["content"])
+
+    return render_template("post.html", post=post, html_content=html_content)
 
 if __name__ == "__main__":
     app.run(debug=True)
