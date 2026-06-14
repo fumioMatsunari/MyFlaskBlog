@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="/static/style.css">
+
+<h1>「{{ category }}」のカテゴリーの記事</h1>
+
+<ul>
+    {% for post in posts %}
+        <li>
+            <a href="/post/{{ post.id }}">{{ post.title }}</a>
+        </li>
+    {% endfor %}
+</ul>
+
+<p><a href="/categories">← カテゴリー一覧に戻る</a></p>
+<p><a href="/">← トップページに戻る</a></p>
+<p><a href="/admin">← 管理画面に戻る</a></p>

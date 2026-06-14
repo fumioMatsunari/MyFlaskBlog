@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="/static/style.css">
+
+<h1>カテゴリー一覧</h1>
+
+<ul>
+    {% for cat in categories %}
+        <li><a href="/category/{{ cat }}">{{ cat }}</a></li>
+    {% endfor %}
+</ul>
+
+<p><a href="/">← トップページに戻る</a></p>
+<p><a href="/admin">← 管理画面に戻る</a></p>

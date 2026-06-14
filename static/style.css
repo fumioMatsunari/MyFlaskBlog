@@ -1,0 +1,108 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+th {
+    background: #f0f0f0;
+}
+
+a {
+    text-decoration: none;
+    color: #0078d4;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    padding: 6px 12px;
+    background: #0078d4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+button:hover {
+    background: #005fa3;
+}
+
+select {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+select {
+    appearance: auto;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    max-width: 900px; /* 好きな幅に調整できます */
+    box-sizing: border-box;
+    padding: 8px;
+    font-size: 16px;
+}
+
+form {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+p {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+
+/* 入力欄を広げる */
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    max-width: 900px;   /* 好きな幅に調整できます */
+    box-sizing: border-box;
+    padding: 8px;
+    font-size: 16px;
+}
+
+/* 本文欄をもっと縦に広げる */
+textarea {
+    height: 400px;  /* rows より確実に広がる */
+}
+
+/* フォーム全体を中央に寄せる */
+form {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* 見出しの余白を整える */
+p {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+
+

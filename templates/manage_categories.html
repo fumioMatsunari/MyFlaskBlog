@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/static/style.css">
+
+<h1>カテゴリー管理</h1>
+
+<h2>カテゴリー一覧</h2>
+<ul>
+    {% for cat in categories %}
+        <li>
+            {{ cat }}
+            <a href="/admin/categories/confirm_delete/{{ cat }}">削除</a>
+        </li>
+    {% endfor %}
+</ul>
+
+<h2>カテゴリーを追加</h2>
+<form method="POST">
+    <input type="text" name="new_category" placeholder="新しいカテゴリー名">
+    <button type="submit">追加</button>
+</form>
+
+<p><a href="/admin">← 管理画面に戻る</a></p>

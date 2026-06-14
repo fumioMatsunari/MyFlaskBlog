@@ -1,11 +1,29 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
 <h1>記事を編集</h1>
 
 <form method="POST">
+
     <p>タイトル：</p>
     <input type="text" name="title" value="{{ post.title }}" required>
 
+    <p>新しいカテゴリーを追加：</p>
+    <input type="text" name="new_category" placeholder="新しいカテゴリー名" value="{{ new_category }}">
+
+
+    <p>カテゴリー（押下げて選択）：</p>
+    <select name="category">
+        <option value="">（選択してください）</option>
+        {% for cat in categories %}
+            <option value="{{ cat }}" {% if cat == post.category %}selected{% endif %}>
+                {{ cat }}
+            </option>
+        {% endfor %}
+    </select>
+
     <p>本文（Markdown）：</p>
-    <textarea name="content" rows="10" required>{{ post.content }}</textarea>
+    <textarea name="content" rows="20" required>{{ post.content }}</textarea>
 
     <p><button type="submit">更新</button></p>
 </form>

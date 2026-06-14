@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="/static/style.css">
+
+<h1>カテゴリー削除の確認</h1>
+
+<p>本当に「{{ category }}」カテゴリーを削除しますか？</p>
+<p>※ このカテゴリーがついている記事は、カテゴリーが「未設定」になります。</p>
+
+<p>
+    <a href="/admin/categories/delete/{{ category }}">
+        <button>削除する</button>
+    </a>
+</p>
+
+<p><a href="/admin/categories">← カテゴリー管理に戻る</a></p>

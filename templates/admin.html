@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="/static/style.css">
+
+<h1>管理画面</h1>
+
+<p><a href="/categories">カテゴリー一覧を見る</a></p>
+
+<p>記事数：{{ count }} 件</p>
+<p><a href="/admin/new">＋ 新しい記事を作成</a></p>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>タイトル</th>
+        <th>カテゴリー</th>
+        <th>操作</th>
+    </tr>
+
+    {% for post in posts %}
+    <tr>
+        <td>{{ post.id }}</td>
+        <td>{{ post.title }}</td>
+        <td>{{ post.category }}</td>
+        <td>
+            <a href="/admin/edit/{{ post.id }}">編集</a> |
+            <a href="/admin/delete/{{ post.id }}" onclick="return confirm('本当に削除しますか？');">削除</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</table>
+
+<p><a href="/">← ブログに戻る</a></p>
